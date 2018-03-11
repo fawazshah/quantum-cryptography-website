@@ -75,135 +75,111 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Basis</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase">1.Basis for Quantum Cryptography </h2>
           </div>
         </div>
-        <div class="row text-center">
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">E-Commerce</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">Responsive Design</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">Web Security</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-          </div>
+    
+ 
+	  <h3> Qubit (Quantum bit)</h3>
+  
+
+	<p> A qubit is an object which can attain a state of quantum superposition between two states, for example:</p>
+	<ul> 
+	<li> the up and down spin states of an electron </li>
+	<li> the two orthogonal polarization states of a photon. </li>
+	</ul>
+
+	  <p>The state of a single qubit can be described by a two-dimensional column vector of complex numbers. The two states in which a qubit are measured are known as basis states, where any pair of vectors that are linearly independent could serve as a basis. These two quantum states correspond to the two states of a classical bit, namely 0 and 1. </p>
+	  <p>Any quantum state vector can be written as a sum of these basis vectors, where only two out of infinitely many vectors correspond to states of classical bits.</p>
+
+	<h3> Uncertainty Principle </h3>
+	<p> Measuring a qubit collapses the quantum state to either one of the two classical states 0 or 1, i.e. the state of the qubit becomes one of the two basis vectors. Hence, a qubit can be thought to represent both states simultaneously.</p>
+	<p> One important aspect of the measurement process is that it alters the state of the quantum system: the effect of the measurement is that the new state is exactly the outcome of the measurement. </p>
+	<p> Only a qubit which is already in a basis state (like a classical bit) will be left unchanged after the measurement. </p>
+
+	<h3> No-Cloning Theorem  </h3>
+	<p>After the measurement, the system is in the measured state. That is, further measurements will always yield the same value. [1.3] </p>
+	<p>As we can only extract one bit of information from the state of a qubit, it has been proved to be physically impossible to fully replicate the original qubit.[1.4] </p>
+
+	<h3> Uses in Cryptography </h3>
+	<p> Qubits can be used to transfer a key along a quantum communication channel. This key can then be used to encrypt data using a cipher, allowing data to be sent securely along classical channels of communication.</p>
+
+    
+<div class="row" style="background-color:  #e6e6e6; padding: 21px 30px;">
+          <h4 style="width: 100%; text-decoration: underline;">References</h4>
+          <p>[1.1] E. Knill, R. Laflamme & G. J. Milburn. (2001). A scheme for efficient quantum computation with linear optics. Nature. 409, 46–52.</p>
+	<p>[1.2]http://www-inst.eecs.berkeley.edu/~cs191/sp12/notes/chap1&2.pdf</p>
+	<p> [1.3]https://www.cl.cam.ac.uk/teaching/0910/QuantComp/notes.pdf</p>
+	<p> [1.4]https://www.doc.ic.ac.uk/~herbert/teaching/QCA5P.pdf</p>
         </div>
-      </div>
+
     </section>
 
     <!-- Key Distribution -->
-    <section class="bg-light" id="key-distribution">
+   <section class="bg-light" id="key-distribution">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Key Distribution</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase">2. Key Distribution (Transferring keys safely) </h2>
           </div>
         </div>
+        <p></p>
         <div class="row">
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Threads</h4>
-              <p class="text-muted">Illustration</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Explore</h4>
-              <p class="text-muted">Graphic Design</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Finish</h4>
-              <p class="text-muted">Identity</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Lines</h4>
-              <p class="text-muted">Branding</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Southwest</h4>
-              <p class="text-muted">Website Design</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Window</h4>
-              <p class="text-muted">Photography</p>
-            </div>
-          </div>
+	  <p><b>Entanglement based protocols </b>: The quantum states of multiple separate objects can become linked together in such a way that they must be described by a combined quantum state, not as individual objects (known as entanglement)  and performing a measurement on one object affects the other. [2.1] This property is used to guarantee a secure connection as intercepting either of the entangled pair of objects alters the overall system.</p>
+	  <p><b>Prepare and measure protocols:</b> The security of the protocol comes from encoding the information in non-orthogonal states. Quantum indeterminacy means that both of these states cannot be measured without disturbing the original state; this property can be exploited to detect eavesdropping and to determine the amount of information that has been intercepted. </p>
+
+	<h3>BB84 protocol: Charles H. Bennett and Gilles Brassard (1984)</h3>
+				
+	  <p>This protocol was designed to use photon polarization states to transmit data, but works with any two pairs of conjugate states, e.g. many optical fibre based implementations use phase encoded states. </p>
+	  <p>The sender (Alice) and the receiver (Bob) are connected by a quantum communication channel (such as an optical fibre or free space) and a public classical channel (broadcast radio or the internet).</p>
+
+<p> </p>
+ 
+	<h4>Step 1 (Generation of photons/key)</h4>
+ 
+	  <p>Alice creates a random bit (0 or 1) and then randomly selects one of two bases (say vertical/	horizontal or diagonal) to transmit it in. She then prepares a photon polarization state depending both on the bit value and basis, as shown below:</p>
+
+	<img class="mx-auto" src= "img/Zay/quantumTable.png"> 
+
+	  <p>The sender (Alice) and the receiver (Bob) are connected by a quantum communication channel (such as an optical fibre or free space) and a public classical channel (broadcast radio or the internet).</p>
+
+<p> </p>
+
+	<h4>Step 2 (Quantum transmission of photons/ key)</h4>
+
+	<p>Alice then transmits a single photon in this state to Bob using the quantum channel. This process is repeated with new random bits, with Alice recording the state, basis and time of each photon sent.</p>
+
+<p> </p>
+
+	<h4>Step 3 (Check validity of measurements)</h4>
+
+	<p>As Bob does not know the basis the photons were encoded in, he selects a basis at random to measure in, for example using a horizontal/vertical polarizing filter.</p>
+	<p>If the photon was created as horizontal or vertical then this measures the correct state, but if it was created as diagonal then there is a 50-50 chance of returning either horizontal or vertical. Bob also records the time, measurement basis used and measurement result of each photon received.[2.2]</p>
+	<p>Bob and Alice then compare the basis in which Alice sent each photon with the basis Bob measured it in, discarding any which do not match to leave on average half the bits as a shared key.</p>
+
+<p> </p>
+
+	<h4>Step 4 (Security/No cloning Theorem)</h4>
+
+	<p>Alice and Bob then compare a predetermined subset of their remaining bit strings, aborting the key and trying again if over a certain number of bits differ,  possibly with a different quantum channel. </p>
+	<p>An eavesdropper (Eve) must gain a copy of each photon for themself and pass an accurate copy on to Bob to avoid detection when Alice and Bob compare later. </p>
+	<p> However, this is impossible as the no cloning theorem guarantees that if a cloning device can copy the vertical/horizontal polarizations, it will fail to copy either of the diagonal polarizations.[2.3] Hence, to eavesdrop, Eve must introduce errors in Bob’s measurements, and the key will be aborted. </p>
+
+	<div class="row" style="background-color:  #e6e6e6; padding: 21px 30px;">
+          <h4 style="width: 100%; text-decoration: underline;">References</h4>
+          <p>[2.1] Braunstein S.L., Pati A.K. (2003) Introduction to Entanglement-Based Protocols. In: Braunstein S.L., Pati A.K. (eds) Quantum Information with Continuous Variables. Springer, Dordrecht</p>
+	<p>[2.2] https://www.doc.ic.ac.uk/~herbert/teaching/QCA5P.pdf</p>
+	<p> [2.3] W. K. Wootters and W. H. Zurek, Phys. Today 62, 76 (2009). </p>
         </div>
+
+        </div>
+ 	
       </div>
+
+
+
+
+
     </section>
 
     <!-- Coin Flipping -->
@@ -364,7 +340,7 @@
           <div class="col-sm-4">
             <div class="team-member">
               <img class="mx-auto rounded-circle" src="img/about_us/4.jpg" alt="">
-              <a href="#" target="_blank">            <!-- Zay replace "#" in the href tag with your personal webpage link-->
+              <a href="https://www.doc.ic.ac.uk/~ze3017/personal_website/index.html" target="_blank">            <!-- Zay replace "#" in the href tag with your personal webpage link-->
                 <h4>Z&#233lie Everest</h4>
               </a>
             </div>
