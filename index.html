@@ -204,82 +204,73 @@
     </section>
 
     <!-- Coin Flipping -->
-    <section id="coin flipping">
+    <section class="bg-light" id="coin flipping">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Coin Flipping</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <ul class="timeline">
-              <li>
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/about/1.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>2009-2011</h4>
-                    <h4 class="subheading">Our Humble Beginnings</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline-inverted">
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/about/2.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>March 2011</h4>
-                    <h4 class="subheading">An Agency is Born</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/about/3.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>December 2012</h4>
-                    <h4 class="subheading">Transition to Full Service</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline-inverted">
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/about/4.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>July 2014</h4>
-                    <h4 class="subheading">Phase Two Expansion</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline-inverted">
-                <div class="timeline-image">
-                  <h4>Be Part
-                    <br>Of Our
-                    <br>Story!</h4>
-                </div>
-              </li>
-            </ul>
+            <h3> Classical Coin Flipping </h3>
           </div>
+        </div>
+        <div class="row">
+          <div class="MainText col-lg-8">
+              <p style="text-align: justify">
+              Coin flipping was introduced by Manuel Blum in 1981 as part of classical cryptography.
+              Coin flipping is used when two parties do not trust each other (and there is not a reliable third party present to prevent cheating). E.g. Bob and Alice are divorced and live in different cities. They flip a coin over the phone to decide who will get the car. However, Bob is worried that if he tells Alice ‘heads’ say, Alice will lie and tell him he lost regardless of what the outcome of the coin flip actually is.
+              Classical coin flipping is based on the assumption that completely secure one-way functions (‘an efficiently computable function … whose inverse cannot be computed efficiently’ and ‘from a knowledge of f(x) one cannot have more than a 50-50 change to guess efficiently if x has some non trivial property e.g. is even’ - Blum) exist.
+              However, we do not know if they do, so currently we base it off normally secure one way functions/bit commitment schemes such as large prime factorisation which is used in current cryptographic systems (public/private key distribution) or cryptographic hashing.
+              A commitment scheme allows you to commit to a chosen value whilst keeping it hidden from the other person. The value cannot be changed after it has been committed, but it can be shown when you desire. (with bit commitment schemes the committed value is a bit).
+            </p>
+          </div>
+
+          <div class="ManuelBlum col-lg-4">
+            <figure>
+              <img src="img/Serene/ManuelBlum.jpg" alt="Manuel Blum" style="width: 284.85px; height: 333.9px"/>
+              <figcaption> Manuel Blum. Image from: <a href="https://alchetron.com/Manuel-Blum">Alchetron</a></figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="row">
+          Method as presented by Blum in his paper [1]:
+          <ol>
+            <li> Alice and Bob agree on a completely secure one way function f. </li>
+            <li> Alice selects an integer x unknown to Bob and sends him f(x). </li>
+            <li> Bob guesses whether he thinks he is even or odd. </li>
+            <li> Alice reveals whether he is wrong or right. She can send him the original x so that Bob can check using the function f whether Alice was lying or not. </li>
+          </ol>
+          <p style="text-align: justify"> In this way neither can cheat as Bob is just guessing as he cannot determine anything from f(x) and Alice cannot send Bob the wrong number as then when he computes f(the number) it would not produce the number she initially sent Bob in step 2).
+            So replace the integer x and the properties even or odd with heads or tails. Alice flips the coin and sends Bob f(coin value). Bob guesses coin value and Alice reveals answer. Bob can check.
+          </p>
+          One method (from wikipedia):
+          <ol>
+            <li> Alice and Bob each choose a random string, "ljngjkrjgnfdudiudd" and "gfdgdfjkherfsfsd" respectively. </li>
+            <li> Alice chooses an outcome for an imaginary coin flip, such as "tail". </li>
+            <li> Bob sends Alice his random string "gfdgdfjkherfsfsd" </li>
+            <li> Alice immediately computes a cryptographic hash of the string "tail ljngjkrjgnfdudiudd gfdgdfjkherfsfsd", which is 59dea408d43183a3937957e71a4bcacc616d9cbc and sends it to Bob </li>
+            <li> Alice asks Bob: "heads or tails"? Bob says, for instance, "heads". </li>
+            <li> Alice tells him she's just won, and proves it by showing the string "tail ljngjkrjgnfdudiudd gfdgdfjkherfsfsd". </li>
+            <li> Bob can check that Alice didn't lie by computing the SHA-1 of the string himself. Furthermore, Bob by providing his own randomly generated string guarantees that Alice wasn't able to precompute an image pair of "tail/random string" or "head/random string". </li>
+          </ol>
+        <h3 style="width: 100%"> Quantum Coin Flipping </h3>
+        <p style="text-align: justify">
+          Protocol according to wikipedia:
+          <ol>
+            <li> Alice chooses a random basis e.g. horizontally or diagonally and a random sequence of bits. </li>
+            <li> Alice encodes her qubits using her chosen basis and sends these qubits as a sequence of polarized photons to Bob. </li>
+            <li> Bob chooses a basis at random for each of the photons and records the reading he gets based on the basis he chose. </li>
+            <li> Based on his table, Bob makes a guess as to which basis Alice used to encode the photons. </li>
+            <li> Alice can confirm whether Bob was correct or not by sending Bob her original un-encoded sequence along with the basis that she used. Bob can check that Alice has not cheated by comparing his table with a table created from encoding the qubits with Alice’s basis. </li>
+          </ol>
+        </p>
+        </div>
+        <div class="row" style="background-color:  #e6e6e6; padding: 21px 30px;">
+          <h4 style="width: 100%; text-decoration: underline;">References</h4>
+          <p>[1] Manuel Blum: "Coin Flipping by Telephone", 1981.</p>
         </div>
       </div>
     </section>
@@ -331,7 +322,7 @@
           <div class="col-sm-4">
             <div class="team-member">
               <img class="mx-auto rounded-circle" src="img/about_us/3.jpg" alt="">
-              <a href="#" target="_blank">            <!-- Serene replace "#" in the href tag with your personal webpage link-->
+              <a href="https://www.doc.ic.ac.uk/~sc5217/" target="_blank">
                 <h4>Serene Chongtrakul</h4>
               </a>
             </div>
