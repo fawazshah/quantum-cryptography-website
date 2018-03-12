@@ -285,23 +285,44 @@
           <p></p>
 	</div>
         <div class="row">
-          <div class="row">
-            <p>Several companies across the world have already built machines capable of quantum computation. A Canadian company, D-Wave Systems, became the first company in the world to sell a quantum computer when they announced the D-Wave One, a 16-qubit quantum computer, in 2011. Since then they have released multiple iterations of the product, the most recent being the D-Wave 2000Q<sup>[9]</sup>, containing 2000 qubits. The quantum computer found its first customer in Temporal Defense Systems, a cybersecurity firm based in Washington, USA. IBM and Google have also announced interest at exploring quantum machinery, with Google having recently announced the Bristlecone<sup>[5]</sup>, a newly-developed 72-qubit quantum microprocessor. In a blog post they justified it as a proof-of-principle piece of technology for building larger quantum computers in the future.</p>
-          </div>
-          <div class="col-lg-12 text-center">
-            <img style="margin-left: auto; margin-right: auto" src="img/Fawaz/dwave-2000q.jpeg">
-            <p>The D-Wave 2000Q<sup>[9]</sup></p>
-	  </div>
- 	  <div class="row">
-            <p>One very significant quantum algorithm, known as Shor’s algorithm, provides a way to factorize large numbers in polynomial-time (i.e. fairly quickly) by manipulating the properties of quantum computation. Methods of encryption such as RSA and ECC rely on the fact that factorizing large numbers is an exponential-time problem (i.e. takes a very long time), so using Shor’s algorithm in practice would completely disrupt the RSA system. Pre-Shor’s algorithm methods for factorizing primes take around \(2 ^ {f(n)}\) operations (where \(n\) is the ‘modulus’, a specific number used in calculating RSA keys, and \(f(n)\) is some function of \(n\)). Note that this is an exponential relationship to the modulus. Shor’s algorithm takes around \((\log n) ^ {f(n)}\) operations, much faster than any other process<sup>[1]</sup>.</p>
-          </div>
-          <div class="row">
-            <p>However, there is still hope. There are several methods of cryptography that, although could be weakened by quantum computation in the future, have been categorized as quantum-safe for now. Some of the main ones are the McEliece system, lattice-based cryptography, and NTRU (a variant of lattice-based crypto). Other examples include multivariate cryptography, symmetric encryptions such as AES, and hash functions like SHA-256.</p>
-          </div>
-          <div class="col-lg-12 text-center">
-            <img style="margin-left: auto; margin-right: auto" src="img/Fawaz/bernstein1.png">
-            <p>Current security status of several cryptosystems<sup>[1]</sup></p>
-	  </div>
+          <p>Several companies across the world have already built machines capable of quantum computation. A Canadian company, D-Wave Systems, became the first company in the world to sell a quantum computer when they announced the D-Wave One, a 16-qubit quantum computer, in 2011. Since then they have released multiple iterations of the product, the most recent being the D-Wave 2000Q<sup>[9]</sup>, containing 2000 qubits. The quantum computer found its first customer in Temporal Defense Systems, a cybersecurity firm based in Washington, USA. IBM and Google have also announced interest at exploring quantum machinery, with Google having recently announced the Bristlecone<sup>[5]</sup>, a newly-developed 72-qubit quantum microprocessor. In a blog post they justified it as a proof-of-principle piece of technology for building larger quantum computers in the future.</p>
+        </div>
+        <div class="col-lg-12 text-center">
+          <img style="margin-left: auto; margin-right: auto" src="img/Fawaz/dwave-2000q.jpeg">
+          <p>The D-Wave 2000Q<sup>[9]</sup></p>
+        </div>
+        <div class="row">
+          <p>One very significant quantum algorithm, known as Shor’s algorithm, provides a way to factorize large numbers in polynomial-time (i.e. fairly quickly) by manipulating the properties of quantum computation. Methods of encryption such as RSA and ECC rely on the fact that factorizing large numbers is an exponential-time problem (i.e. takes a very long time), so using Shor’s algorithm in practice would completely disrupt the RSA system. Pre-Shor’s algorithm methods for factorizing primes take around \(2 ^ {f(n)}\) operations (where \(n\) is the ‘modulus’, a specific number used in calculating RSA keys, and \(f(n)\) is some function of \(n\)). Note that this is an exponential relationship to the modulus. Shor’s algorithm takes around \((\log n) ^ {f(n)}\) operations, much faster than any other process<sup>[1]</sup>.</p>
+        </div>
+        <div class="row">
+          <p>However, there is still hope. There are several methods of cryptography that, although could be weakened by quantum computation in the future, have been categorized as quantum-safe for now. Some of the main ones are the McEliece system, lattice-based cryptography, and NTRU (a variant of lattice-based crypto). Other examples include multivariate cryptography, symmetric encryptions such as AES, and hash functions like SHA-256.</p>
+        </div>
+        <div class="col-lg-12 text-center">
+          <img style="margin-left: auto; margin-right: auto" src="img/Fawaz/bernstein1.png">
+          <p>Current security status of several cryptosystems<sup>[1]</sup></p>
+        </div>
+        <div class="row">
+          <p>The McEliece system was invented in 1978<sup>[10]</sup> by Robert McEliece, a mathematician at Caltech. The algorithm uses a structure called a Goppa code, a type of error-correcting linear code, to generate the public key and private key. The algorithm proceeds as follows<sup>[11]</sup>:</p>
+        </div>
+        <div class="row">
+          <h4>Key generation</h4>
+          <ol>
+            <li>Alice selects a binary \((n,k)\)-linear code \(C\) capable of correcting \(t\) errors. This code must possess an efficient decoding algorithm and generates a \( k\times n\) generator matrix \(G\) for the code \(C\).</li>
+            <li>Alice selects a random \(k\times k\) binary non-singular matrix \(S\).</li>
+            <li>Alice selects a random \( n\times n\) permutation matrix \(P\).</li>
+            <li>Alice computes the \(k\times n\) matrix \({\hat {G}}=SGP\).</li>
+            <li>Alice's public key is \(({\hat {G}},t)\); her private key is \((S,G,P)\).</li>
+          </ol>
+        </div>
+        <div class="row">
+          <h4>Message encryption</h4>
+          <p><br>Suppose Bob wishes to send a message m to Alice whose public key is \(({\hat {G}},t)\):</p>
+          <ol>
+            <li>Bob encodes the message \(m\) as a binary string of length \(k\).</li>
+            <li>Bob computes the vector \(c^{\prime }=m{\hat {G}}\).</li>
+            <li>Bob generates a random \(n\)-bit vector \(z\) containing exactly \(t\) ones (a vector of length \(n\) and weight \(t\))</li>
+	    <li>Bob computes the ciphertext as \(c=c^{\prime }+z\).</li>
+          </ol>
         </div>
       </div>
     </section>
