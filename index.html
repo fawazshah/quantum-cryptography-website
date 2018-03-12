@@ -23,7 +23,7 @@
     <!-- Custom styles for this template -->
     <link href="css/agency.css" rel="stylesheet">
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script> 
+    <script type="text/javascript" async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script> 
 
   </head>
 
@@ -213,7 +213,7 @@
         </div>
         <div class="row">
           <div class="MainText col-lg-8">
-              <p style="text-align: justify">
+              <p>
               Coin flipping was introduced by Manuel Blum in 1981 as part of classical cryptography.
               Coin flipping is used when two parties do not trust each other (and there is not a reliable third party present to prevent cheating). E.g. Bob and Alice are divorced and live in different cities. They flip a coin over the phone to decide who will get the car. However, Bob is worried that if he tells Alice ‘heads’ say, Alice will lie and tell him he lost regardless of what the outcome of the coin flip actually is.
               Classical coin flipping is based on the assumption that completely secure one-way functions (‘an efficiently computable function … whose inverse cannot be computed efficiently’ and ‘from a knowledge of f(x) one cannot have more than a 50-50 change to guess efficiently if x has some non trivial property e.g. is even’ - Blum) exist.
@@ -238,7 +238,7 @@
             <li> Bob guesses whether he thinks he is even or odd. </li>
             <li> Alice reveals whether he is wrong or right. She can send him the original x so that Bob can check using the function f whether Alice was lying or not. </li>
           </ol>
-          <p style="text-align: justify"> In this way neither can cheat as Bob is just guessing as he cannot determine anything from f(x) and Alice cannot send Bob the wrong number as then when he computes f(the number) it would not produce the number she initially sent Bob in step 2).
+          <p> In this way neither can cheat as Bob is just guessing as he cannot determine anything from f(x) and Alice cannot send Bob the wrong number as then when he computes f(the number) it would not produce the number she initially sent Bob in step 2).
             So replace the integer x and the properties even or odd with heads or tails. Alice flips the coin and sends Bob f(coin value). Bob guesses coin value and Alice reveals answer. Bob can check.
           </p>
           One method (from wikipedia):
@@ -252,7 +252,7 @@
             <li> Bob can check that Alice didn't lie by computing the SHA-1 of the string himself. Furthermore, Bob by providing his own randomly generated string guarantees that Alice wasn't able to precompute an image pair of "tail/random string" or "head/random string". </li>
           </ol>
         <h3 style="width: 100%"> Quantum Coin Flipping </h3>
-        <p style="text-align: justify">
+        <p>
           Protocol according to wikipedia:
           <ol>
             <li> Alice chooses a random basis e.g. horizontally or diagonally and a random sequence of bits. </li>
@@ -279,13 +279,29 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Post-quantum cryptography</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+          <p></p>
+	</div>
+        <div class="row">
+          <div class="row">
+            <p>Several companies across the world have already built machines capable of quantum computation. A Canadian company, D-Wave Systems, became the first company in the world to sell a quantum computer when they announced the D-Wave One, a 16-qubit quantum computer, in 2011. Since then they have released multiple iterations of the product, the most recent being the D-Wave 2000Q<sup>[9]</sup>, containing 2000 qubits. The quantum computer found its first customer in Temporal Defense Systems, a cybersecurity firm based in Washington, USA. IBM and Google have also announced interest at exploring quantum machinery, with Google having recently announced the Bristlecone<sup>[5]</sup>, a newly-developed 72-qubit quantum microprocessor. In a blog post they justified it as a proof-of-principle piece of technology for building larger quantum computers in the future.</p>
           </div>
+          <div class="col-lg-12 text-center">
+            <img style="margin-left: auto; margin-right: auto" src="img/Fawaz/dwave-2000q.jpeg">
+            <p>The D-Wave 2000Q<sup>[9]</sup></p>
+	  </div>
+ 	  <div class="row">
+            <p>One very significant quantum algorithm, known as Shor’s algorithm, provides a way to factorize large numbers in polynomial-time (i.e. fairly quickly) by manipulating the properties of quantum computation. Methods of encryption such as RSA and ECC rely on the fact that factorizing large numbers is an exponential-time problem (i.e. takes a very long time), so using Shor’s algorithm in practice would completely disrupt the RSA system. Pre-Shor’s algorithm methods for factorizing primes take around \(2 ^ {f(n)}\) operations (where \(n\) is the ‘modulus’, a specific number used in calculating RSA keys, and \(f(n)\) is some function of \(n\)). Note that this is an exponential relationship to the modulus. Shor’s algorithm takes around \((\log n) ^ {f(n)}\) operations, much faster than any other process<sup>[1]</sup>.</p>
+          </div>
+          <div class="row">
+            <p>However, there is still hope. There are several methods of cryptography that, although could be weakened by quantum computation in the future, have been categorized as quantum-safe for now. Some of the main ones are the McEliece system, lattice-based cryptography, and NTRU (a variant of lattice-based crypto). Other examples include multivariate cryptography, symmetric encryptions such as AES, and hash functions like SHA-256.</p>
+          </div>
+          <div class="col-lg-12 text-center">
+            <img style="margin-left: auto; margin-right: auto" src="img/Fawaz/bernstein1.png">
+            <p>Current security status of several cryptosystems<sup>[1]</sup></p>
+	  </div>
         </div>
       </div>
     </section>
