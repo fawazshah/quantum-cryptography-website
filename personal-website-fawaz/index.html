@@ -1,0 +1,51 @@
+<html>
+        <head>
+                <title>Countdown</title>
+                <style>
+                        @-webkit-keyframes fadeIn {             /* "-webkit-" for Chrome/Safari/Opera */
+                                from {opacity: 0;}
+                                to {opacity: 1;}
+                        }
+
+                        @keyframes fadeIn {
+                                from {opacity: 0;}
+                                to {opacity: 1;}
+                        }
+
+                        #background {
+                                height: 100%;
+                                width: 100%;
+                                background: linear-gradient(#3399ff, #66ccff);
+                                -webkit-animation: fadeIn 1s;
+                                animation: fadeIn 1s;
+                                -webkit-animation-fill-mode: forwards;
+                                animation-fill-mode: forwards;
+                        }
+
+                        #text {
+                                opacity: 0;
+                                padding-top: 7%;
+                                text-align: center;
+                                line-height: 150%;
+                                color: #ffff99;
+                                font-size: 500%;
+                                font-family: Verdana;
+                                -webkit-animation: fadeIn 1s;
+                                animation: fadeIn 1s;
+                                -webkit-animation-fill-mode: forwards;
+                                animation-fill-mode: forwards;
+                                -webkit-animation-delay: 0.5s;
+                                animation-delay: 0.5s;
+                        }
+                </style>
+        </head>
+
+        <body onload="getCountdown()">
+                <div id="background">
+                        <div id="text">
+                          <h1>Fawaz Shah</h1>
+                          <p>Imperial College JMC student</p>
+                        </div>
+                </div>
+        </body>
+</html>

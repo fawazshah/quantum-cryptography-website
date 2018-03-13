@@ -285,24 +285,24 @@
           <p></p>
 	</div>
         <div class="row">
-          <p>Several companies across the world have already built machines capable of quantum computation. A Canadian company, D-Wave Systems, became the first company in the world to sell a quantum computer when they announced the D-Wave One, a 16-qubit quantum computer, in 2011. Since then they have released multiple iterations of the product, the most recent being the D-Wave 2000Q<sup>[9]</sup>, containing 2000 qubits. The quantum computer found its first customer in Temporal Defense Systems, a cybersecurity firm based in Washington, USA. IBM and Google have also announced interest at exploring quantum machinery, with Google having recently announced the Bristlecone<sup>[5]</sup>, a newly-developed 72-qubit quantum microprocessor. In a blog post they justified it as a proof-of-principle piece of technology for building larger quantum computers in the future.</p>
+          <p>Several companies across the world have already built machines capable of quantum computation. A Canadian company, D-Wave Systems, became the first company in the world to sell a quantum computer when they announced the D-Wave One, a 16-qubit quantum computer, in 2011. Since then they have released multiple iterations of the product, the most recent being the D-Wave 2000Q<sup>[4.1]</sup>, containing 2000 qubits. The quantum computer found its first customer in Temporal Defense Systems, a cybersecurity firm based in Washington, USA. IBM and Google have also announced interest at exploring quantum machinery, with Google having recently announced the Bristlecone<sup>[4.2]</sup>, a newly-developed 72-qubit quantum microprocessor. In a blog post they justified it as a proof-of-principle piece of technology for building larger quantum computers in the future.</p>
         </div>
         <div class="col-lg-12 text-center">
           <br>
           <img style="margin-left: auto; margin-right: auto" src="img/Fawaz/dwave-2000q.jpeg">
-          <p>The D-Wave 2000Q<sup>[9]</sup></p>
+          <p>The D-Wave 2000Q<sup>[4.1]</sup></p>
         </div>
         <div class="row">
-          <p><br>One very significant quantum algorithm, known as Shor’s algorithm, provides a way to factorize large numbers in polynomial-time (i.e. fairly quickly) by manipulating the properties of quantum computation. Methods of encryption such as RSA and ECC (elliptic curve cryptography) rely on the fact that factorizing large numbers is an exponential-time problem (i.e. takes a very long time), so using Shor’s algorithm in practice would completely disrupt the RSA system. Pre-Shor’s algorithm methods for factorizing primes take around \(2 ^ {f(n)}\) operations (where \(n\) is the ‘modulus’, a specific number used in calculating RSA keys, and \(f(n)\) is some function of \(n\)). Shor’s algorithm takes around \((\log n) ^ {f(n)}\) operations, much faster than any other process<sup>[1]</sup>.</p>
+          <p><br>One very significant quantum algorithm, known as Shor’s algorithm, provides a way to factorize large numbers in polynomial-time (i.e. fairly quickly) by manipulating the properties of quantum computation. Methods of encryption such as RSA and ECC (elliptic curve cryptography) rely on the fact that factorizing large numbers is an exponential-time problem (i.e. takes a very long time), so using Shor’s algorithm in practice would completely disrupt the RSA system. Pre-Shor’s algorithm methods for factorizing primes take around \(2 ^ {f(n)}\) operations (where \(n\) is the ‘modulus’, a specific number used in calculating RSA keys, and \(f(n)\) is some function of \(n\)). Shor’s algorithm takes around \((\log n) ^ {f(n)}\) operations, much faster than any other process<sup>[4.3]</sup>.</p>
           <p>However, there is still hope. There are several methods of cryptography that, although could be weakened by quantum computation in the future, have been categorized as quantum-safe for now. Some of the main ones are the McEliece system, lattice-based cryptography, and NTRU (a variant of lattice-based crypto). Other examples include multivariate cryptography, symmetric encryptions such as AES, and hash functions like SHA-256.</p>
         </div>
         <br>
         <div class="col-lg-12 text-center">
-          <img style="margin-left: auto; margin-right: auto" src="img/Fawaz/bernstein1.png">
-          <p>Current security status of several cryptosystems<sup>[1]</sup></p>
+          <img style="margin-left: auto; margin-right: auto" src="img/Fawaz/sendrier1.png">
+          <p>Current security status of several cryptosystems<sup>[4.3]</sup></p>
         </div>
         <div class="row">
-          <p><br>The McEliece system was invented in 1978<sup>[10]</sup> by Robert McEliece, a mathematician at Caltech. The algorithm uses a structure called a Goppa code, a type of error-correcting linear code, to generate the public key and private key. The algorithm proceeds as follows<sup>[11]</sup>:</p>
+          <p><br>The McEliece system was invented in 1978<sup>[4.4]</sup> by Robert McEliece, a mathematician at Caltech. The algorithm uses a structure called a Goppa code, a type of error-correcting linear code, to generate the public key and private key. The algorithm proceeds as follows<sup>[4.5]</sup>:</p>
         </div>
         <br>
         <div class="row">
@@ -357,18 +357,18 @@
         <br>
         <div class="col-lg-12 text-center">
           <img style="margin-left: auto; margin-right: auto" src="img/Fawaz/nature1.png">
-          <p>Advantages and disadvantages to various quantum-safe algorithms<sup>[2]</sup></p>
+          <p>Advantages and disadvantages to various quantum-safe algorithms<sup>[4.6]</sup></p>
         </div>
         <br>
         <div class="row">
-          <p>Unfortunately, many of these quantum-safe encryption methods are not currently in mainstream use. This is mainly due to key size; encryption methods such as the McEliece system usually have keys of more than a million bits, whereas RSA and ECC usually only have keys in the thousand bit range<sup>[1]</sup>. (Remember the keys for the McEliece system are a collection of large matrices, which could each easily have thousands of entries). The algorithms that have shorter keys also generally require more security analysis, and since quantum computers have not been made available to the general public, it is incredibly hard to verify whether these algorithms are indeed quantum-safe.</p>
+          <p>Unfortunately, many of these quantum-safe encryption methods are not currently in mainstream use. This is mainly due to key size; encryption methods such as the McEliece system usually have keys of more than a million bits, whereas RSA and ECC usually only have keys in the thousand bit range<sup>[4.3]</sup>. (Remember the keys for the McEliece system are a collection of large matrices, which could each easily have thousands of entries). The algorithms that have shorter keys also generally require more security analysis, and since quantum computers have not been made available to the general public, it is incredibly hard to verify whether these algorithms are indeed quantum-safe.</p>
           <p>Quantum-unsafe encryption standards such as RSA will eventually need to be replaced by quantum-safe methods, in case of hackers getting hands on quantum computing power. It may be hard to convince banks and governments to change their systems proactively, however this is necessary in order to avoid a surprise attack by hackers. Various startup security companies now actively focus on protecting against potential attacks from quantum computers; two such companies are ISARA in Ontario, Canada, and PostQuantum in London.</p>
-          <p>ISARA’s flagship product, Radiate™, is advertised as a “high quality implementation...of quantum-safe algorithms and integration tools”<sup>[6]</sup>. Their system utilizes both the NTRU algorithm and the McEliece algorithm, as well as modified lattice-based encryption, and the company is currently in the process of getting their product certified as a cryptographic standard under the US government. ISARA is also involved in trying to create an international standard for quantum encryption, having recently submitted proposals to the widely used X.509 encryption standard that support quantum-safe encryption certificates<sup>[7]</sup>.</p>
-          <p>PostQuantum is a security company that specifically acts on blockchain technology to make it quantum-safe<sup>[3]</sup> (the cryptographic hashing system in the blockchain is based off of ECC, which as mentioned earlier is vulnerable to attacks using quantum computers). Their reasoning is much the same as for ISARA; they predict quantum computers will come into mainstream use within the next 10-20 years, and that current technology must be protected in advance in case of a surprise attack. The following is their predicted timeline for the quantum-computing industry:</p>
+          <p>ISARA’s flagship product, Radiate™, is advertised as a “high quality implementation...of quantum-safe algorithms and integration tools”<sup>[4.7]</sup>. Their system utilizes both the NTRU algorithm and the McEliece algorithm, as well as modified lattice-based encryption, and the company is currently in the process of getting their product certified as a cryptographic standard under the US government. ISARA is also involved in trying to create an international standard for quantum encryption, having recently submitted proposals to the widely used X.509 encryption standard that support quantum-safe encryption certificates<sup>[4.8]</sup>.</p>
+          <p>PostQuantum is a security company that specifically acts on blockchain technology to make it quantum-safe<sup>[4.9]</sup> (the cryptographic hashing system in the blockchain is based off of ECC, which as mentioned earlier is vulnerable to attacks using quantum computers). Their reasoning is much the same as for ISARA; they predict quantum computers will come into mainstream use within the next 10-20 years, and that current technology must be protected in advance in case of a surprise attack. The following is their predicted timeline for the quantum-computing industry:</p>
         </div>
         <div class="col-lg-12 text-center">
           <img style="margin-left: auto; margin-right: auto" src="img/Fawaz/postquantum1.png">
-          <p>PostQuantum's predictions for the future of quantum computing<sup>[3]</sup></p>
+          <p>PostQuantum's predictions for the future of quantum computing<sup>[4.9]</sup></p>
         </div>
         <br>
         <div class="row">
@@ -377,8 +377,15 @@
         <div class="container" style="background-color:  #e6e6e6; padding: 21px 30px;">
           <h4 style="width: 100%; text-decoration: underline;">References</h4>
           <div class="row">
-            <p>[4.1] "D-Wave Announces D-Wave 2000Q Quantum Computer...". Accessed 13/03/18. https://www.dwavesys.com/press-releases/d-wave%C2%A0announces%C2%A0d-wave-2000q-quantum-computer-and-first-system-order</p>
-            <p>[4.2] "A Preview of Bristlecone, Google’s New Quantum Processor". Accessed 13/03/18. https://research.googleblog.com/2018/03/a-preview-of-bristlecone-googles-new.html</p>
+            <p>[4.1] D-Wave Systems, Inc. "D-Wave Announces D-Wave 2000Q Quantum Computer...". Accessed 13/03/18. https://www.dwavesys.com/press-releases/d-wave%C2%A0announces%C2%A0d-wave-2000q-quantum-computer-and-first-system-order</p>
+            <p>[4.2] Google LLC. "A Preview of Bristlecone, Google’s New Quantum Processor". Accessed 13/03/18. https://research.googleblog.com/2018/03/a-preview-of-bristlecone-googles-new.html</p>
+           <p>[4.3] Sendrier, N. "Code-based Cryptography". Feb 2009. ISBN: 978-3-540-88701-0.</p>
+           <p>[4.4] McEliece, R. J. "A Public-Key Cryptosystem Based On Algebraic Coding Theory". 1978.</p>
+           <p>[4.5] University of Colorado Denver. "M5410 - The McEliece Cryptosystem". Accessed 13/03/18. http://www-math.ucdenver.edu/~wcherowi/courses/m5410/ctcmcel.html</p>
+           <p>[4.6] Bernstein, D. & Lange, T. "Post-quantum cryptography". Nature. 2017. Accessed 13/03/18.</p>
+           <p>[4.7] ISARA. "ISARA Radiate". Accessed 13/03/18. https://www.isara.com/isara-radiate/.</p>
+           <p>[4.8] ISARA. "ISARA Sets New International Standard For Quantum-Safe Security". Accessed 13/03/18. https://www.isara.com/isara-sets-new-international-standard-quantum-safe-security/</p>
+           <p>[4.9] PostQuantum. Accessed 13/03/18. https://www.post-quantum.com/</p>
 	  </div>
         </div>
       </div>
@@ -432,7 +439,7 @@
           <div class="col-sm-4">
             <div class="team-member">
               <img class="mx-auto rounded-circle" src="img/about_us/1.jpg" alt="">
-	      <a href="https://www.doc.ic.ac.uk/~fs2217/" target="_blank">
+	      <a href="personal-website-fawaz/index.html" target="_blank">
               	<h4>Fawaz Shah</h4>
 	      </a>
             </div>
