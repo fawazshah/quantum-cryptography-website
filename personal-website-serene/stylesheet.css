@@ -12,22 +12,12 @@ body {
 }
 
 .topnav a {
-  float: right;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 21px 30px;
   text-decoration: none;
-  font-size: 17px;
 }
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #7FE7E7;
-  color: black;
+  color: #ffccff;
+  text-decoration: none;
 }
 
 .topnav h1 {
@@ -36,9 +26,30 @@ body {
   padding: 5px 16px;
 }
 
+.topnav h1:hover {
+  color: #ffccff;
+}
+
+.topnavLinks a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 21px 30px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnavLinks a:hover {
+  color: #ffccff;
+}
+
+.topnavLinks a.active {
+  background-color: #ffccff;
+  color: black;
+}
+
 .asidelinks {
   float: right;
-  overflow: hidden;
   z-index: 1;
   width: 140px;
   top: 100px;
@@ -47,7 +58,7 @@ body {
   margin-left: 10px;
   font-size: 17px;
   background: #f2f2f2;
-  padding: 21px 30px;
+  padding: 15px 20px;
 }
 
 .asidelinks a {
