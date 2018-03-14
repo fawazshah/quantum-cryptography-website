@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <title>Quantum Cryptography | Quantum Key Distribution</title>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="FutureQuantum.html">Future of Quantum Cryptography</a>
+  <a href="PostQuantum.html">Post-Quantum Cryptography</a>
+  <a href="CoinFlipping.html">Coin Flipping</a>
+  <a class="active" href="QKD.html">Quantum Key Distribution</a>
+  <a href="Basics.html">Basics for Quantum Cryptography</a>
+  <a href="index.html">Home</a>
+  <h1> Quantum Cryptography </h1>
+</div>
+<body>
+
+<div class="main">
+  <div class="QKD">
+    <h2>Key Distribution (Transferring keys safely) </h2>
+    <p><b>Entanglement based protocols </b>: The quantum states of multiple separate objects can become linked together
+      in such a way that they must be described by a combined quantum state, not as individual objects (known as
+      entanglement) and performing a measurement on one object affects the other<sup>[2.1]</sup> . This property is used
+      to guarantee a secure connection as intercepting either of the entangled pair of objects alters the overall
+      system.</p>
+    <p><b>Prepare and measure protocols:</b> The security of the protocol comes from encoding the information in
+      non-orthogonal states. Quantum indeterminacy means that both of these states cannot be measured without disturbing
+      the original state; this property can be exploited to detect eavesdropping and to determine the amount of
+      information that has been intercepted. </p>
+
+    <h3>BB84 protocol: Charles H. Bennett and Gilles Brassard (1984)</h3>
+
+    <p>This protocol was designed to use photon polarization states to transmit data, but works with any two pairs of
+      conjugate states, e.g. many optical fibre based implementations use phase encoded states. </p>
+    <p>The sender (Alice) and the receiver (Bob) are connected by a quantum communication channel (such as an optical
+      fibre or free space) and a public classical channel (broadcast radio or the internet).</p>
+
+    <h3>Step 1 (Generation of photons/key)</h3>
+    <p>Alice creates a random bit (0 or 1) and then randomly selects one of two bases (say vertical/ horizontal or
+      diagonal) to transmit it in. She then prepares a photon polarization state depending both on the bit value and
+      basis, as shown below:</p>
+
+    <img class="mx-auto" src="img/Zay/quantumTable.png">
+    <p style="margin-top: 1em">The sender (Alice) and the receiver (Bob) are connected by a quantum communication
+      channel (such as an optical fibre or free space) and a public classical channel (broadcast radio or the
+      internet).</p>
+
+
+    <h3 style="margin-top=1em">Step 2 (Quantum transmission of photons/ key)</h3>
+
+    <p>Alice then transmits a single photon in this state to Bob using the quantum channel. This process is repeated
+      with new random bits, with Alice recording the state, basis and time of each photon sent.</p>
+
+
+    <h3>Step 3 (Check validity of measurements)</h3>
+
+    <p>As Bob does not know the basis the photons were encoded in, he selects a basis at random to measure in, for
+      example using a horizontal/vertical polarizing filter.</p>
+    <p>If the photon was created as horizontal or vertical then this measures the correct state, but if it was created
+      as diagonal then there is a 50-50 chance of returning either horizontal or vertical. Bob also records the time,
+      measurement basis used and measurement result of each photon received<sup>[2.2]</sup>.</p>
+    <p>Bob and Alice then compare the basis in which Alice sent each photon with the basis Bob measured it in,
+      discarding any which do not match to leave on average half the bits as a shared key.</p>
+
+
+    <h3>Step 4 (Security/No cloning Theorem)</h3>
+
+    <p>Alice and Bob then compare a predetermined subset of their remaining bit strings, aborting the key and trying
+      again if over a certain number of bits differ, possibly with a different quantum channel. </p>
+    <p>An eavesdropper (Eve) must gain a copy of each photon for themself and pass an accurate copy on to Bob to avoid
+      detection when Alice and Bob compare later. </p>
+    <p> However, this is impossible as the no cloning theorem guarantees that if a cloning device can copy the
+      vertical/horizontal polarizations, it will fail to copy either of the diagonal polarizations<sup>[2.3]</sup>.
+      Hence, to eavesdrop, Eve must introduce errors in Bob’s measurements, and the key will be aborted. </p>
+  </div>
+</div>
+
+<br>
+
+<!--References-->
+
+<div class="references">
+  <h3>References</h3>
+  <p>[2.1] Braunstein S.L., Pati A.K. (2003) Introduction to Entanglement-Based Protocols. In: Braunstein S.L., Pati
+    A.K. (eds) Quantum Information with Continuous Variables. Springer, Dordrecht</p>
+  <p>[2.2] https://www.doc.ic.ac.uk/~herbert/teaching/QCA5P.pdf</p>
+  <p>[2.3] W. K. Wootters and W. H. Zurek, Phys. Today 62, 76 (2009). </p>
+</div>
+
+<br>
+</body>
