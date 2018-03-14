@@ -25,8 +25,9 @@
   <p>Although the theory discussed in other sections suggests quantum cryptography will greatly increase the security of
     systems, it might not be so simple in practice. Various factors will also affect the security of the systems, like
     machine <sup>[5.1]</sup> and human <sup>[5.2]</sup> error.</p>
-  <p>“The security of Quantum Key Distribution systems is never absolute” <sup>[5.3]</sup>. The security of QKD systems (and similar
-    quantum cryptographical systems) relies on the following three assumptions <sup>[5.3]</sup>:</p>
+  <p>“The security of Quantum Key Distribution systems is never absolute” <sup>[5.3]</sup>. The security of quantum key
+    distribution (QKD) systems (and similar quantum cryptographical systems) relies on the following three assumptions
+    <sup>[5.3]</sup>:</p>
   <ol>
     <li> Initial Secrecy of the Password</li>
     <li> Reliability of Devices in the System</li>
@@ -40,11 +41,14 @@
 
     <h3>Key Distribution</h3>
     <p>The common quantum key distribution methods rely on the ability to send a stream of single qubits to a receiver
-      <sup>[5.4]</sup>. However, producing exactly one photon for each ‘bit’ of information has proven to be very difficult, as many
+      <sup>[5.4]</sup>. However, producing exactly one photon for each ‘bit’ of information has proven to be very
+      difficult, as many
       methods of producing such a small amount of light, such as filtered lasers, have a chance of releasing multiple
-      photons at the same time <sup>[5.4]</sup>. This brings a security flaw to QKD as it allows an outside eavesdropper to intercept
+      photons at the same time <sup>[5.4]</sup>. This brings a security flaw to QKD as it allows an outside eavesdropper
+      to intercept
       the identical photons without the intended receiver being any the wiser; the receiver would still receive the same
-      signal they’d expect as QKD methods work under the assumption that a single photon is always produced <sup>[5.5]</sup>. So, in
+      signal they’d expect as QKD methods work under the assumption that a single photon is always produced
+      <sup>[5.5]</sup>. So, in
       the unlucky case that the final key has each ‘bit’ of information on two or more photons, the eavesdropper is also
       able to obtain the key and hence ‘listen in’ on the conversation.</p>
     <p>Methods of fighting the single photon flaws have been proposed. One method involves purposefully sending multiple
@@ -58,48 +62,84 @@
     <h3>Long Distance Signals</h3>
     <p>Communication between 2 computers sometimes requires the data sent and received to travel many miles by wire.
       This is currently a problem for data comprised of entangled photons; background radiation and noise from a
-      “turbulent universe” can affect the photons and increase the error rates in detection of them <sup>[5.5]</sup>, as well as the
-      chance of the photons not even reaching the endpoint due to the limited distance of fibre-based QKD <sup>[5.1]</sup>.</p>
+      “turbulent universe” can affect the photons and increase the error rates in detection of them <sup>[5.5]</sup>, as
+      well as the
+      chance of the photons not even reaching the endpoint due to the limited distance of fibre-based QKD
+      <sup>[5.1]</sup>.</p>
     <p>Although signal repeaters could solve the distance problem, these would add weak points that could be exploited
       by a hacker. The repeaters would also be affected by background noise, and also the error rates of the machines
-      correctness itself <sup>[5.6]</sup>. Over a long distance many repeaters would be needed, and the (small) errors in each
+      correctness itself <sup>[5.6]</sup>. Over a long distance many repeaters would be needed, and the (small) errors
+      in each
       repeater could potentially add up to a large inaccuracy in data transmission.</p>
     <p>It should also be noted that most quantum communications would need to be done via fibre optic cable (rather than
-      free air) <sup>[5.7]</sup> from end to end <sup>[5.1]</sup>, which is not available for a lot of homes <sup>[5.8]</sup> <sup>[5.9]</sup>. And of the homes that do
-      have
-      fibre access, most of them have the last mile of cable made from copper wire instead <sup>[5.1]</sup>. This means the signal
-      conversion from quantum to classical would have to be done at the endpoint of the fibre optic, not the endpoint of
-      the entire communication system, so the last stretch of the cable can be intercepted via classical hacking
-      methods, decreasing security of the system. Adding in how many rural homes use mobile or satellite broadband <sup>[5.9]</sup>,
-      with current infrastructure, end-to-end quantum security won’t be available to most homes.</p>
+      free air) <sup>[5.7]</sup> from end to end <sup>[5.1]</sup>, which is not available for a lot of homes
+      <sup>[5.8]</sup> <sup>[5.9]</sup>. And of the homes that do
+      have fibre access, most of them have the last mile of cable made from copper wire instead <sup>[5.1]</sup>. This
+      means the signal conversion from quantum to classical would have to be done at the endpoint of the fibre optic,
+      not the endpoint of the entire communication system, so the last stretch of the cable can be intercepted via
+      classical hacking methods, decreasing security of the system. Adding in how many rural homes use mobile or
+      satellite broadband <sup>[5.9]</sup>, with current infrastructure, end-to-end quantum security won’t be available
+      to most homes.</p>
 
     <h3>Attacking the Detectors</h3>
     <p>Another approach hackers might take against QKD is against the message receiver’s photon detectors. The detectors
       are designed to register the properties of each photons that passes through, but tests have shown that these
       detectors can be “blinded” by a strong pulse of light that stop them detecting a photon being received. It has
       been suggested the “blinding” technique can be used to “control” the detector <sup>[5.10]</sup>.</p>
-    <p>This has led to the study of device-independent cryptography <sup>[5.11]</sup>, so that the only variables that the security
+    <p>This has led to the study of device-independent cryptography <sup>[5.11]</sup>, so that the only variables that
+      the security
       depends upon are based only upon “directly observable correlations between sender and receiver, and it does not
-      matter how these correlations have been established” <sup>[5.10]</sup>. This means that in the event of situations that put
+      matter how these correlations have been established” <sup>[5.10]</sup>. This means that in the event of situations
+      that put
       previous methods of quantum security at risk, like the detectors being blinded or multiple photons being produced
       at a time, a device-independent encryption system would not fail, as the sender and receiver still produce the
-      right correlations, so algorithms would still be able to create a secret key from the communication <sup>[5.11]</sup>.</p>
+      right correlations, so algorithms would still be able to create a secret key from the communication
+      <sup>[5.11]</sup>.</p>
   </div>
 
   <div>
     <h2>Initial Secrecy of the Password</h2>
     <p>It should be noted that most hacks (91%) are not performed by interception, instead the attacker will focus on
-      the endpoints <sup>[5.2]</sup>. Various methods are employed by adversaries to gain sensitive information from users that don’t
+      the endpoints <sup>[5.2]</sup>. Various methods are employed by adversaries to gain sensitive information from
+      users that don’t
       involve interception of signal, but they mainly have 2 ideas behind them; having malicious software on the user’s
       computer, or deception <sup>[5.12]</sup>.</p>
 
     <h3>Deception</h3>
-    <p>With different methods of fooling a user, like phishing <sup>[5.13]</sup>, hackers can find out sensitive data, like passwords
+    <p>With different methods of fooling a user, like phishing <sup>[5.13]</sup>, hackers can find out sensitive data,
+      like passwords
       and emails, without having to really ‘hack’. Through social engineering, the hacker can gain the information by
       earning the users trust or giving them a false sense of security. If the hacker gains the user’s password, in the
       future, if a website use QKD, a hacker would be able to completely circumvent the security of the QKD system by
-      just pretending to be the user (assuming the user would use the same password, as 55% <sup>[5.14]</sup>or more (81-87%) <sup>[5.15]</sup>
+      just pretending to be the user (assuming the user would use the same password, as 55% <sup>[5.14]</sup>or more
+      (81-87%) <sup>[5.15]</sup>
       indeed do); no need for interception.</p>
+
+    <h3>Malicious Software</h3>
+    <p>Various viruses and trojan horses can find their way onto a user’s computer, if the user is not careful. These
+      can vary in impact; some just monitor the network, others will actively steal information, and some will attempt
+      to delete and sabotage the computer. The malicious software can also find passwords and sensitive data that may
+      have been sent or received on an encrypted network, again avoiding the need to intercept. Many users can
+      unknowingly bring this software to corporate environments, and 60% are known to not care about corporate security
+      when doing so<sup>[5.16]</sup>. A business could, in future, invest heavily into quantum security, but as 31%
+      experience fraud
+      directly from cybercrime<sup>[5.17]</sup>, and the stats seem to suggest that one of these attacks would not be
+      via
+      communications interception<sup>[5.18]</sup>, the quantum security would seem to be a lesser needed increase
+      compared to
+      better cyber security education for employees.</p>
+  </div>
+
+  <div>
+    <h2>Conclusion</h2>
+    <p>In a future world with quantum cryptography, we’d certainly expect cyber security for the average user to be
+      stronger. But as the infrastructure doesn’t seem to be in place for now, and the hardware currently flaws the
+      theoretical unbreak-ability of quantum cryptography, it will be a while before we can expect mainstream use.</p>
+    <p>Even if we do overcome the problems in the hardware, and the encryption methods are perfected, this certainly
+      won’t make any computer or business “un-hackable”, as most attacks appear to be from carelessness of the user. So
+      maybe for networks where users are trusted to be careful and confidential, like in government, the quantum
+      security would certainly play an important part in protecting the data. But for the average user, perhaps quantum
+      cryptography should be nearer the back of the line of ways to improve our security.</p>
   </div>
 </div>
 
@@ -107,54 +147,71 @@
 
 <div class="references">
   <h3>References</h3>
-  <p>[1] D. Drinkwater, “What is quantum encryption? It’s no silver bullet, but could improve security,” CSO, 08 11
+  <p>[5.1] D. Drinkwater, “What is quantum encryption? It’s no silver bullet, but could improve security,” CSO, 08 11
     2017. [Online]. Available:
     <a href="https://www.csoonline.com/article/3235970/data-protection/what-is-quantum-encryption-it-s-no-silver-bullet-but-could-improve-security.html">
       https://www.csoonline.com/article/3235970/data-protection/what-is-quantum-encryption-it-s-no-silver-bullet-but-could-improve-security.html</a>.
     [Accessed 13 03 2018].</p>
-  <p>[2] S. Zurier, “91% Of Cyberattacks Start With A Phishing Email,” DARKReading, 13 12 2016. [Online]. Available:
+  <p>[5.2] S. Zurier, “91% Of Cyberattacks Start With A Phishing Email,” DARKReading, 13 12 2016. [Online]. Available:
     <a href="https://www.darkreading.com/endpoint/91--of-cyberattacks-start-with-a-phishing-email/d/d-id/1327704?">
-      https://www.darkreading.com/endpoint/91--of-cyberattacks-start-with-a-phishing-email/d/d-id/1327704?</a>. [Accessed 13
+      https://www.darkreading.com/endpoint/91--of-cyberattacks-start-with-a-phishing-email/d/d-id/1327704?</a>.
+    [Accessed 13
     03 2018].</p>
-  <p>[3] L. Meyer, “Just How Secure is Quantum Cryptography?,” OSA, 28 05 2013. [Online]. Available:
+  <p>[5.3] L. Meyer, “Just How Secure is Quantum Cryptography?,” OSA, 28 05 2013. [Online]. Available:
     <a href="https://www.osa.org/en-us/about_osa/newsroom/news_releases/2013/just_how_secure_is_quantum_cryptography/">
-      https://www.osa.org/en-us/about_osa/newsroom/news_releases/2013/just_how_secure_is_quantum_cryptography/</a>. [Accessed
+      https://www.osa.org/en-us/about_osa/newsroom/news_releases/2013/just_how_secure_is_quantum_cryptography/</a>.
+    [Accessed
     13 03 2018].</p>
-  <p>[4] J. Palmer, “Quantum key distribution with single photons,” BBC, 3 08 2012. [Online]. Available:
+  <p>[5.4] J. Palmer, “Quantum key distribution with single photons,” BBC, 3 08 2012. [Online]. Available:
     <a href="http://www.bbc.co.uk/news/science-environment-19097605">
       http://www.bbc.co.uk/news/science-environment-19097605</a>. [Accessed 13 03 2018].</p>
-  <p>[5] A. Mann, “Laws of Physics Say Quantum Cryptography is Unhackable. It's Not,” Wired, 07 06 2013. [Online].
+  <p>[5.5] A. Mann, “Laws of Physics Say Quantum Cryptography is Unhackable. It's Not,” Wired, 07 06 2013. [Online].
     Available:
     <a href="https://www.wired.com/2013/06/quantum-cryptography-hack/">
       https://www.wired.com/2013/06/quantum-cryptography-hack/</a>. [Accessed 13 03 2018].</p>
-  <p>[6] “Practical challenges in quantum key distribution,” Npj Quantum Information, vol. 2, no. 16025, 2016.</p>
-  <p>[7] P. A. Hiskett, D. Rosenberg, C. G. Peterson, R. J. Hughes, S. Nam, A. E. Lita, A. J. Miller and J. E. Nordholt,
+  <p>[5.6] “Practical challenges in quantum key distribution,” Npj Quantum Information, vol. 2, no. 16025, 2016.</p>
+  <p>[5.7] P. A. Hiskett, D. Rosenberg, C. G. Peterson, R. J. Hughes, S. Nam, A. E. Lita, A. J. Miller and J. E. Nordholt,
     “Long-distance quantum key distribution in optical fibre,” New Journal of Physics, vol. 8, no. 193, 2006. </p>
-  <p>[8] N. Fildes, “UK is promised a full-fibre broadband diet,” Financial Times, 16 02 2018. [Online]. Available:
+  <p>[5.8] N. Fildes, “UK is promised a full-fibre broadband diet,” Financial Times, 16 02 2018. [Online]. Available:
     <a href="https://www.ft.com/content/e1a0d21a-0da8-11e8-8eb7-42f857ea9f09">
-    https://www.ft.com/content/e1a0d21a-0da8-11e8-8eb7-42f857ea9f09</a>. [Accessed 13 03 2018].</p>
-  <p>[9] Choose, “Rural broadband: what are the options?,” Choose, 22 03 2017. [Online]. Available:
+      https://www.ft.com/content/e1a0d21a-0da8-11e8-8eb7-42f857ea9f09</a>. [Accessed 13 03 2018].</p>
+  <p>[5.9] Choose, “Rural broadband: what are the options?,” Choose, 22 03 2017. [Online]. Available:
     <a href="https://www.choose.co.uk/guide/best-options-for-rural-broadband.html">
-    https://www.choose.co.uk/guide/best-options-for-rural-broadband.html</a>. [Accessed 13 03 2018].</p>
-  <p>[10] ScienceDaily, “Just how secure is quantum cryptography?,” Science Daily, 28 05 2013. [Online]. Available:
+      https://www.choose.co.uk/guide/best-options-for-rural-broadband.html</a>. [Accessed 13 03 2018].</p>
+  <p>[5.10] ScienceDaily, “Just how secure is quantum cryptography?,” Science Daily, 28 05 2013. [Online]. Available:
     https://www.sciencedaily.com/releases/2013/05/130528122435.htm. [Accessed 13 03 2018].</p>
-  <p>[11] D. Mayers and A. Yao, “Quantum Cryptography with Imperfect Apparatus,” 15 09 1998. [Online]. Available:
+  <p>[5.11] D. Mayers and A. Yao, “Quantum Cryptography with Imperfect Apparatus,” 15 09 1998. [Online]. Available:
     <a href="https://arxiv.org/abs/quant-ph/9809039">
-    https://arxiv.org/abs/quant-ph/9809039</a>. [Accessed 13 03 2018].</p>
-  <p>[12] Finjan Team, “9 Common Hacking Techniques and How to Deal With Them,” Finjan, 20 03 2017. [Online]. Available:
+      https://arxiv.org/abs/quant-ph/9809039</a>. [Accessed 13 03 2018].</p>
+  <p>[5.12] Finjan Team, “9 Common Hacking Techniques and How to Deal With Them,” Finjan, 20 03 2017. [Online]. Available:
     <a href="https://blog.finjan.com/9-common-hacking-techniques-and-how-to-deal-with-them/">
-    https://blog.finjan.com/9-common-hacking-techniques-and-how-to-deal-with-them/</a>. [Accessed 13 03 2018].</p>
-  <p>[13] R. Villadiego, “The Dangers Of Phishing,” Forbes, 14 09 2017. [Online]. Available:
+      https://blog.finjan.com/9-common-hacking-techniques-and-how-to-deal-with-them/</a>. [Accessed 13 03 2018].</p>
+  <p>[5.13] R. Villadiego, “The Dangers Of Phishing,” Forbes, 14 09 2017. [Online]. Available:
     <a href="https://www.forbes.com/sites/forbestechcouncil/2017/09/14/the-dangers-of-phishing/#268f8e745078">
-    https://www.forbes.com/sites/forbestechcouncil/2017/09/14/the-dangers-of-phishing/#268f8e745078</a>. [Accessed 13 03
+      https://www.forbes.com/sites/forbestechcouncil/2017/09/14/the-dangers-of-phishing/#268f8e745078</a>. [Accessed 13
+    03
     2018].</p>
-  <p>[14] G. Cluley, “55% of net users use the same password for most, if not all, websites. When will they learn?,”
+  <p>[5.14] G. Cluley, “55% of net users use the same password for most, if not all, websites. When will they learn?,”
     Sophos, 23 04 2013. [Online]. Available:
     <a href="https://nakedsecurity.sophos.com/2013/04/23/users-same-password-most-websites/">
-    https://nakedsecurity.sophos.com/2013/04/23/users-same-password-most-websites/</a>. [Accessed 13 03 2018].</p>
-  <p>[15] C. Daileda, “Basically everyone reuses their passwords,” Mashable, 01 03 2017. [Online]. Available:
+      https://nakedsecurity.sophos.com/2013/04/23/users-same-password-most-websites/</a>. [Accessed 13 03 2018].</p>
+  <p>[5.15] C. Daileda, “Basically everyone reuses their passwords,” Mashable, 01 03 2017. [Online]. Available:
     <a href="https://mashable.com/2017/02/28/passwords-reuse-study-keeper-security/#JQFt2gdtM8qg">
-    https://mashable.com/2017/02/28/passwords-reuse-study-keeper-security/#JQFt2gdtM8qg</a>. [Accessed 13 03 2018].</p>
+      https://mashable.com/2017/02/28/passwords-reuse-study-keeper-security/#JQFt2gdtM8qg</a>. [Accessed 13 03 2018].
+  </p>
+  <p>[5.16] O. Eiferman, “Millennials Don’t Care About Mobile Security, and Here’s What to Do About It,” Wired, 09 2014.
+    [Online]. Available:
+    <a href="https://www.wired.com/insights/2014/09/millennials-mobile-security/">
+      https://www.wired.com/insights/2014/09/millennials-mobile-security/</a>. [Accessed 14 03 2018].
+  </p>
+  <p>[5.17] “Pulling fraud out of the shadows,” PWC, 14 March 2017. [Online]. Available:
+    <a href="https://www.pwc.com/gx/en/services/advisory/forensics/economic-crime-survey.html">
+      https://www.pwc.com/gx/en/services/advisory/forensics/economic-crime-survey.html</a>. [Accessed 13 03 2018].</p>
+  <p>[5.18] “35 cyber security statistics every CIO should know in 2017,” Tektonika, 22 06 2017. [Online]. Available:
+    <a href="https://www.tektonikamag.uk/index.php/2017/06/22/35-cyber-security-statistics-every-cio-know-2017/">
+      https://www.tektonikamag.uk/index.php/2017/06/22/35-cyber-security-statistics-every-cio-know-2017/</a>. [Accessed
+    14 03
+    2017].</p>
 </div>
 
 <br>
