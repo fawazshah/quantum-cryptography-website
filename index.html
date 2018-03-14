@@ -217,7 +217,7 @@
         <div class="row">
           <div class="MainText col-lg-8">
               <p style="text-align: justify">
-                  The concept of coin flipping was first introduced by Manuel Blum in 1981 as a classical cryptography primitive.
+                  The concept of coin flipping was first introduced by Manuel Blum in 1981 as a classical cryptography primitive<sup>*</sup>.
                   Coin flipping is used when two parties do not trust each other (and there is not a reliable third party present to prevent cheating).
                   E.g. Bob and Alice are divorced and live in different cities. They flip a coin over the phone to decide who will get the car. However,
                   Bob is worried that if he tells Alice ‘heads’ say, Alice will lie and tell him that he lost regardless of what the outcome of the coin flip actually was.
@@ -226,7 +226,7 @@
                   Classical coin flipping is based on the assumption that completely secure one-way functions exist. As described by Blum in his research paper [1],
                   such a function, f, should be "efficiently computable", have an inverse that cannot be computed easily, and "from a knowledge of f(x) one cannot
                   have more than a 50-50 chance to guess efficiently if x has some non trivial property e.g. that it is even" [1]. Currently, however, we do not know if
-                  such a function exists and therefore, classical coin flipping is based off of normally, but not completely, secure one way functions or bit commitment
+                  such a function exists and therefore, classical coin flipping is based off of normally, but not completely, secure one way functions or bit commitment<sup>**</sup>
                   schemes such as large prime factorisation (which is still used in cryptographic systems today).
               </p>
           </div>
@@ -240,12 +240,7 @@
         </div>
 
         <div class="row col-lg-12">
-          <p style="text-align: justify">
-            A bit commitment scheme, which is also a cryptographic primitive, allows Alice to commit to a chosen bit whilst keeping all information about it hidden from Bob.
-            The bit cannot be changed after it has been committed, however, it can be revealed to Bob. All current classical cryptographic primitives are said to be computationally
-            secure because they rely on the assumption that the computational function used is hard to reverse. Information theoretic security, which is stronger than computationally
-            secure primitives, is "secure even against an all powerful cheating player, typically a player who can easily factor" [2].
-            <br>
+          <p>
             Method as presented by Blum in his paper [1]:
             </br>
             <ol>
@@ -263,6 +258,16 @@
             So in terms of coin flipping, replace the integer x and the properties even or odd with heads or tails.
             Alice flips the coin and sends Bob f(coin value). Bob makes a guess and tells Alice what he thinks the coin value is.
             Alice then reveals answer and Bob can check.
+          </p>
+          <p style="text-align: justify">
+            (*) A cryptographic primitive is a well-established cryptographic algorithm that is used to build cryptosystems.
+            All current classical cryptographic primitives are said to be computationally secure because they rely on
+            the assumption that the computational function used is hard to reverse. Information theoretic security, which is stronger than computationally
+            secure primitives, is "secure even against an all powerful cheating player, typically a player who can easily factor" [2].
+          </p>
+          <p style="text-align: justify">
+            (**) A bit commitment scheme, which is also a cryptographic primitive, allows Alice to commit to a chosen bit whilst keeping all information about it hidden from Bob.
+            The bit cannot be changed after it has been committed, however, it can be revealed to Bob.
           </p>
         </div>
 
@@ -483,9 +488,6 @@
         </div>
         <div class="row">
 	  <p><b>Blockchain</b>: a collection of data organized into chained blocks, with each block marked with a timestamp and a hash of the last block. Often used for ledger systems, e.g. for storing cryptocurrency transactions.</p>
-        </div>
-        <div class="row">
-	  <p><b>Cryptographic primitive</b>: Well-established cryptographic algorithms that are used to build cryptosystems. </p>
         </div>
         <div class="row">
 	  <p><b>Error-correcting code</b>: A code whereby the receiver can check for errors in transmission without the sender having to retransmit the code.</p>
