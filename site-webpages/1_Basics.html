@@ -30,15 +30,15 @@
     <h2>Basics for Quantum Cryptography </h2>
     <h3> Qubit (Quantum bit)</h3>
     <p> A qubit is an object which can attain a state of quantum superposition between two states, for example:</p>
-    <ul>
-      <li> a) the up and down spin states of an electron</li>
+  <ul>
+      <li> a) the up and down half-spin states of an electron</li>
       <br>
       <li> b) the two orthogonal polarization states of a photon.</li>
     </ul>
 
     <p>The state of a single qubit can be described by a two-dimensional column vector of complex numbers. The two
       states in which a qubit are measured are known as basis states, where any pair of vectors that are linearly
-      independent could serve as a basis. These two quantum states correspond to the two states of a classical bit,
+      independent could serve as a basis.<sup>[1.1]</sup> These two quantum states correspond to the two states of a classical bit,
       namely 0 and 1. </p>
     <p>Any quantum state vector can be written as a sum of these basis vectors, where only two out of infinitely many
       vectors correspond to states of classical bits.</p>
@@ -50,13 +50,12 @@
     <p> One important aspect of the measurement process is that it alters the state of the quantum system: the effect of
       the measurement is that the new state is exactly the outcome of the measurement. </p>
     <p> Only a qubit which is already in a basis state (like a classical bit) will be left unchanged after the
-      measurement. </p>
+      measurement.<sup>[1.2]</sup></p>
 
     <h3> No-Cloning Theorem </h3>
     <p>After the measurement, the system is in the measured state. That is, further measurements will always yield the
       same value<sup>[1.3]</sup>. </p>
-    <p>As we can only extract one bit of information from the state of a qubit, it has been proved to be physically
-      impossible to fully replicate the original qubit<sup>[1.4]</sup>.</p>
+    <p>This means that unless the states to be copied are orthogonal, we cannot copy any further states. As we can only extract one bit of information from the state of a qubit, it has been proved to be physically impossible to fully replicate the original qubit.<sup>[1.4]</sup>.</p>
 
     <h3> Uses in Cryptography </h3>
     <p> Qubits can be used to transfer a key along a quantum communication channel. This key can then be used to encrypt
@@ -70,11 +69,14 @@
   <div class="references">
     <h3>References</h3>
 
-    <p>[1.1] E. Knill, R. Laflamme & G. J. Milburn. (2001). A scheme for efficient quantum computation with linear
-      optics. Nature. 409, 46–52.</p>
-    <p>[1.2] http://www-inst.eecs.berkeley.edu/~cs191/sp12/notes/chap1&2.pdf</p>
-    <p>[1.3] https://www.cl.cam.ac.uk/teaching/0910/QuantComp/notes.pdf</p>
-    <p>[1.4] https://www.doc.ic.ac.uk/~herbert/teaching/QCA5P.pdf</p>
+    <p>[1.1] <i> Andrew Steane. (1998). Quantum computing. Reports on Progress in Physics. 61 (2), 142-145.</i> 
+</p>
+    <p>[1.2] <i> Qubits and Quantum Measurement. (n.d.). 1st ed. [ebook] California: UC Berkeley, pp.4-14. Available at: http://www-inst.eecs.berkeley.edu/~cs191/sp12/notes/chap1&2.pdf [Accessed 14 Mar. 2018].</i> 
+</p>
+    <p>[1.3]<i>  Quantum Computing Lecture 1. (2009). 1st ed. [ebook] Cambridge: Cambridge Universtity, pp.1-5. Available at: https://www.cl.cam.ac.uk/teaching/0910/QuantComp/notes.pdf [Accessed 14 Mar. 2018].</i> 
+</p>
+    <p>[1.4] <i>  Quantum Computation (CO484). (2017). 1st ed. [ebook] London: Imperial College London, pp.1-18. Available at: https://www.doc.ic.ac.uk/~herbert/teaching/QCA5P.pdf [Accessed 14 Mar. 2018].</i> 
+</p>
   </div>
 
   <br>

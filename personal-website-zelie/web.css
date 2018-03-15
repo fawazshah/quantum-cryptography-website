@@ -1,0 +1,110 @@
+
+
+.topnav {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #000;
+  z-index : 2;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 21px 30px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #fc1982;
+  color: black;
+}
+
+.topnav h1 {
+  color: white;
+  text-align: left;
+  padding: 5px 16px;
+}
+
+.asidelinks {
+  float: right;
+  overflow: hidden;
+  z-index: 1;
+  width: 140px;
+  top: 100px;
+  right: 30px;
+  position: fixed;
+  margin-left: 10px;
+  font-size: 17px;
+  background: #f2f2f2;
+  padding: 21px 30px;
+}
+
+.asidelinks a {
+  color: black;
+  display: block;
+}
+
+.asidelinks a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.main {
+  margin-right: 220px;
+  padding-left: 30px;
+  padding-top: 80px;
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+
+}
+
+.main p {
+  text-align: justify;
+}
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    overflow-x: hidden;
+    padding-top: 80px;
+    z-index : 1;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ddd;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    padding: 6px 8px 6px 16px;
+}
+
+}
