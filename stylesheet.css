@@ -30,17 +30,13 @@ figure {
   margin: 0em 1em 0em 1em;
 }
 
-figcaption {
-  text-align: center;
-}
-
-ul{
+ul {
    width: 100%;
    display: table;
    text-align: center;
 }
 
-ul li{
+ul li {
      display: inline-block;
      float: none;
 }
@@ -62,7 +58,7 @@ ul li{
   font-weight: 400;
   color: #000000;
   text-transform: uppercase;
-  padding: 1% 1%;
+  padding: 0em 2em 0em 2em;
   text-decoration: none;
 }
 
