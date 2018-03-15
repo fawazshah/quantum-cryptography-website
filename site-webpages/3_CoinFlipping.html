@@ -25,58 +25,48 @@
   </ul>
 </div>
 
-<div class="coinFlipMain">
+<div class="main">
   <h2>Coin Flipping</h2>
   <h3> Classical Coin Flipping </h3>
   <figure style="float: right;">
     <img src="../img/Serene/ManuelBlum.jpg" alt="Manuel Blum" style="width: 284.85px; height: 333.9px"/>
     <figcaption> Manuel Blum. Image from: <a href="https://alchetron.com/Manuel-Blum">Alchetron</a></figcaption></figure>
   <p style="margin-right: 320px">
-    Coin flipping was introduced by Manuel Blum in 1981 as part of classical cryptography.
-    Coin flipping is used when two parties do not trust each other (and there is not a reliable third party present to
-    prevent cheating). E.g. Bob and Alice are divorced and live in different cities. They flip a coin over the phone
-    to decide who will get the car. However, Bob is worried that if he tells Alice ‘heads’ say, Alice will lie and tell
-    him he lost regardless of what the outcome of the coin flip actually is. Classical coin flipping is based on the
-    assumption that completely secure one-way functions (‘an efficiently computable function … whose inverse cannot be
-    computed efficiently’ and ‘from a knowledge of f(x) one cannot have more than a 50-50 change to guess efficiently if
-    x has some non trivial property e.g. is even’ - Blum) exist. However, we do not know if they do, so currently we
-    base it off normally secure one way functions/bit commitment schemes such as large prime factorisation which is used
-    in current cryptographic systems (public/private key distribution) or cryptographic hashing. A commitment scheme
-    allows you to commit to a chosen value whilst keeping it hidden from the other person. The value cannot be changed
-    after it has been committed, but it can be shown when you desire. (with bit commitment schemes the committed value
-    is a bit).
+    The concept of coin flipping was first introduced by Manuel Blum in 1981 as a classical cryptography primitive<sup>*</sup>.
+    Coin flipping is used when two parties do not trust each other (and there is not a reliable third party present to prevent cheating).
+    For example, Bob and Alice are divorced and live in different cities. They flip a coin over the phone to decide who will get the car. However,
+    Bob is worried that if he tells Alice ‘heads’ say, Alice will lie and tell him that he lost regardless of what the outcome of the coin flip actually was.
+    Classical coin flipping is based on the assumption that completely secure one-way functions exist. As described by Blum in his research paper <sup> [3.1] </sup>,
+    such a function, f, should be "efficiently computable", have an inverse that cannot be computed easily, and "from a knowledge of f(x) one cannot
+    have more than a 50-50 chance to guess efficiently if x has some non trivial property e.g. that it is even" <sup> [3.1] </sup>. Currently, however,
+    we do not know if such a function exists and therefore, classical coin flipping is based off of normally, but not completely, secure one way
+    functions or bit commitment schemes<sup>**</sup> such as large prime factorisation (which is still used in cryptographic systems today).
   </p>
-
   Method as presented by Blum in his paper<sup>[3.1]</sup>:
   <ol>
     <li> Alice and Bob agree on a completely secure one way function f.</li>
     <li> Alice selects an integer x unknown to Bob and sends him f(x).</li>
-    <li> Bob guesses whether he thinks he is even or odd.</li>
+    <li> Bob guesses whether he thinks the original number x is even or odd.</li>
     <li> Alice reveals whether he is wrong or right. She can send him the original x so that Bob can check using the
       function f whether Alice was lying or not.
     </li>
   </ol>
-  <p> In this way neither can cheat as Bob is just guessing as he cannot determine anything from f(x) and Alice cannot
-    send Bob the wrong number as then when he computes f(the number) it would not produce the number she initially sent
-    Bob in step 2). So replace the integer x and the properties even or odd with heads or tails. Alice flips the coin
-    and sends Bob f(coin value). Bob guesses coin value and Alice reveals answer. Bob can check.</p>
-  One method (from wikipedia):
-  <ol>
-    <li> Alice and Bob each choose a random string, "ljngjkrjgnfdudiudd" and "gfdgdfjkherfsfsd" respectively.</li>
-    <li> Alice chooses an outcome for an imaginary coin flip, such as "tail".</li>
-    <li> Bob sends Alice his random string "gfdgdfjkherfsfsd"</li>
-    <li> Alice immediately computes a cryptographic hash of the string "tail ljngjkrjgnfdudiudd gfdgdfjkherfsfsd", which
-      is 59dea408d43183a3937957e71a4bcacc616d9cbc and sends it to Bob
-    </li>
-    <li> Alice asks Bob: "heads or tails"? Bob says, for instance, "heads".</li>
-    <li> Alice tells him she's just won, and proves it by showing the string "tail ljngjkrjgnfdudiudd
-      gfdgdfjkherfsfsd".
-    </li>
-    <li> Bob can check that Alice didn't lie by computing the SHA-1 of the string himself. Furthermore, Bob by providing
-      his own randomly generated string guarantees that Alice wasn't able to precompute an image pair of "tail/random
-      string" or "head/random string".
-    </li>
-  </ol>
+  <p> In this way neither Bob nor Alice can cheat: Bob is completely guessing as he cannot determine anything about x from f(x)
+      and Alice cannot send Bob the wrong number y, say, because if Bob tries to compute f(y),
+      the resulting value would not be the same as f(x), the number initially sent by Alice in step 2).
+      So in terms of coin flipping, replace the integer x and the properties even or odd with heads or tails.
+      Alice flips the coin and sends Bob f(coin value). Bob makes a guess and tells Alice what he thinks the coin value is.
+      Alice then reveals the answer and Bob can check.</p>
+  <p>
+    (*) A cryptographic primitive is a well-established cryptographic algorithm that is used to build cryptosystems.
+    All current classical cryptographic primitives are said to be computationally secure because they rely on
+    the assumption that the computational function used is hard to reverse. Information theoretic security, which is stronger than computationally
+    secure primitives, is "secure even against an all powerful cheating player, typically a player who can easily factor" <sup> [3.2] </sup>
+    <br>
+      (**) A bit commitment scheme, which is also a cryptographic primitive, allows Alice to commit to a chosen bit whilst keeping all information about it hidden from Bob.
+      The bit cannot be changed after it has been committed, however, it can be revealed to Bob.
+    </br>
+  </p>
   <h3 style="width: 100%"> Quantum Coin Flipping </h3>
   <p>
   <p>
@@ -89,55 +79,38 @@
   <ol>
     <li> Alice chooses a random basis e.g. horizontally or diagonally and a random sequence of bits.</li>
     <li> Alice encodes her qubits using her chosen basis and sends these qubits as a sequence of polarized photons to
-      Bob.
-    </li>
+         Bob. </li>
     <li> Bob chooses a basis at random for each of the photons and records the reading he gets based on the basis he
-      chose.
-    </li>
+         chose. </li>
     <li> Based on his table, Bob makes a guess as to which basis Alice used to encode the photons.</li>
-    <li> Alice can confirm whether Bob was correct or not by sending Bob her original un-encoded sequence along with the
-      basis
-      that she used. Bob can check that Alice has not cheated by comparing his table with a table created from encoding
-      the qubits with Alice’s basis.
-    </li>
+    <li> Alice can confirm whether Bob was correct or not by sending Bob her original un-encoded sequence along with the basis
+         that she used. Bob can check that Alice has not cheated by comparing his table with a table created from encoding the
+         qubits with Alice’s basis. </li>
   </ol>
 
   <p>
     In principle, by classical theories of probability, “if we understood exactly which physical processes determine
-    the outcome of the flip and also know with enough precision all of the relevant parameters”<sup>[3.5]</sup> e.g. air
-    resistance or force acting on the
-    coin, then we could predict the outcome of a coin flip with certainty. Two physicists, Andreas Albrecht and Daniel
-    Phillips
-    counter this idea and argue that quantum fluctuations could “entirely account for the outcome of these everyday
-    macroscopic events”<sup>[3.5]</sup>.
-    In fact, they claim that “all successful applications of probability to describe nature can be traced to quantum
-    origins”<sup>[3.6]</sup> and
-    that quantum uncertainty can completely randomize the coin flipping. In this way, Albrecht and Phillips argue that
-    coin flipping
-    can be seen as similar to Schrodinger’s cat, where the quantum object in this case is a coin and it’s state is
-    simultaneously heads
+    the outcome of the flip and also know with enough precision all of the relevant parameters” <sup>[3.5]</sup> e.g. air resistance or force acting on the
+    coin, then we could predict the outcome of a coin flip with certainty. Two physicists, Andreas Albrecht and Daniel Phillips
+    counter this idea and argue that quantum fluctuations could “entirely account for the outcome of these everyday macroscopic events” <sup>[3.5]</sup>.
+    In fact, they claim that “all successful applications of probability to describe nature can be traced to quantum origins” <sup>[3.6]</sup> and
+    that quantum uncertainty can completely randomize the coin flipping. In this way, Albrecht and Phillips argue that coin flipping
+    can be seen as similar to Schrödinger’s cat, where the quantum object in this case is a coin and it’s state is simultaneously heads
     and tails until the coin is looked at, at which point the coin takes on a definite value of either heads or tails.
   </p>
   <p>
-    In 2014 scientists at a joint research lab between Centre National de la Recherche Scientifique and Télécom
-    ParisTech
+    In 2014 scientists at a joint research lab between Centre National de la Recherche Scientifique and Télécom ParisTech
     experimentally implemented a quantum coin flipping protocol based on a practical plug and play system, which is an
-    enhanced commercial quantum key distribution device. The researchers claim that their approach "performs strictly
-    better
-    than [a classical protocol] over a distance suitable for communication over metropolitan area optical networks"<sup>[3.7]</sup>.
-    In their published research paper titiled "Experimental plug and play quantum coin flipping", the researchers stated
-    that
-    previous coin flipping protocols required either a single-photon source, which is highly difficult to produce, or an
-    entangled
-    source, which is difficult to implement over long distances, in order to be secure. Their protocol does not use
-    entangled states,
-    therefore making their implementation much more "easily implementable with standard photonic
-    sources"<sup>[3.8]</sup>.
-    Anna Pappa, one of the researchers involved in the aforementioned experiment states that since both Alice and Bob
-    want to win,
-    they both try to cheat by using methods such as "increasing the average photons contained in the pulses" or by
-    "exploiting the physical
-    properties of the system ... like in the detection of the different [quantum] states"<sup>[3.8]</sup>.</p>
+    enhanced commercial quantum key distribution device. The researchers claim that their approach "performs strictly better
+    than [a classical protocol] over a distance suitable for communication over metropolitan area optical networks" <sup>[3.7]</sup>.
+    In their published research paper titiled "Experimental plug and play quantum coin flipping", the researchers stated that
+    previous coin flipping protocols required either a single-photon source, which is highly difficult to produce, or an entangled
+    source, which is difficult to implement over long distances, in order to be secure. Their protocol does not use entangled states,
+    therefore making their implementation much more "easily implementable with standard photonic sources" <sup>[3.8]</sup>.
+    Anna Pappa, one of the researchers involved in the aforementioned experiment states that since both Alice and Bob want to win,
+    they both try to cheat by using methods such as "increasing the average photons contained in the pulses" or by "exploiting the physical
+    properties of the system ... like in the detection of the different [quantum] states" <sup>[3.8]</sup>.
+</p>
 </div>
 
 <br>
@@ -147,32 +120,29 @@
 <div class="references">
   <h3>References</h3>
 
-  <p>[3.1] Manuel Blum: <i>"Coin Flipping by Telephone"</i>, 1981.</p>
-  <p>[3.2] André Chailloux and Iordanis Kerenidis (2017): <i>"Physical Limitations of Quantum Cryptographic Primitives or
-    Optimal Bounds For Quantum Coin Flipping and Bit Commitment"</i> [online].
-    Available from: <a href="https://epubs.siam.org/doi/pdf/10.1137/15M1010853">https://epubs.siam.org/doi/pdf/10.1137/15M1010853</a>
-    [Accessed on: 13/03/2018]</p>
-  <p>[3.3] C. Döscher and M.Keyl (2008): <i>"An Introduction To Quantum Coin-Tossing"</i> [online].
-    Available from: <a href="https://arxiv.org/pdf/quant-ph/0206088.pdf">https://arxiv.org/pdf/quant-ph/0206088.pdf</a>
-    [Accessed on: 13/03/2018]</p>
-  <p>[3.4] Wikipedia (last edited 2017): <i>"Quantum Coin Flipping"</i> [online].
-    Available from: <a href="https://en.wikipedia.org/wiki/Quantum_coin_flipping">https://en.wikipedia.org/wiki/Quantum_coin_flipping</a>
-    [Accessed on: 13/03/2018]</p>
-  <p>[3.5] Edwin Cartlidge (2013): <i>"The quantum coin toss"</i> [online].
-    Available from: <a href="https://physicsworld.com/a/the-quantum-coin-toss/">https://physicsworld.com/a/the-quantum-coin-toss/</a>
-    [Accessed on: 13/03/2018]</p>
-  <p>[3.6] Jennifer Ouellette (2013): <i>"Why Every Coin Flip May Be a Schrödinger's Cat"</i> [online].
-    Available from: <a href="http://nautil.us/blog/why-every-coin-flip-may-be-a-schrdingers-cat">http://nautil.us/blog/why-every-coin-flip-may-be-a-schrdingers-cat</a>
-    [Accessed on: 13/03/2018]</p>
-  <p>[3.7] Stuart Mason Dambrot (2014): <i>"Heads or tails: Experimental quantum coin flipping cryptography performs better
-    than classical protocols"</i> [online].
-    Available from: <a href="https://phys.org/news/2014-05-tails-experimental-quantum-coin-flipping.html">
-      https://phys.org/news/2014-05-tails-experimental-quantum-coin-flipping.html</a>
-    [Accessed on: 13/03/2018]</p>
-  <!-- NEED TO ADD DETAILS: what to do with 7 authors -->
-  <p>[3.8] Anna Pappa et al. (2014): <i>"Experimental Plug and Play Quantum Coin Flipping"</i> [online].
-    Available from: <a href="https://www.nature.com/articles/ncomms4717">https://www.nature.com/articles/ncomms4717</a>
-    [Accessed on: 13/03/2018]</p>
+  <p> [3.1] Manuel Blum (1981): <i>"Coin Flipping By Telephone"</i> [online].
+    Available from: <a href "https://www.cs.cmu.edu/~mblum/research/pdf/coin/">https://www.cs.cmu.edu/~mblum/research/pdf/coin/</a>
+  <p> [3.2] André Chailloux and Iordanis Kerenidis (2017): <i>"Physical Limitations of Quantum Cryptographic Primitives or Optimal Bounds For Quantum Coin Flipping and Bit Commitment" </i>[online].
+     Available from: <a href "https://epubs.siam.org/doi/pdf/10.1137/15M1010853">https://epubs.siam.org/doi/pdf/10.1137/15M1010853</a>
+     [Accessed on: 15/03/2018]</p>
+  <p> [3.3] C. Döscher and M.Keyl (2008): <i>"An Introduction To Quantum Coin-Tossing" </i>[online].
+      Available from: <a href "https://arxiv.org/pdf/quant-ph/0206088.pdf">https://arxiv.org/pdf/quant-ph/0206088.pdf</a>
+      [Accessed on: 13/03/2018]</p>
+  <p> [3.4] Wikipedia (last edited 2017): <i>"Quantum Coin Flipping" </i>[online].
+      Available from: <a href "https://en.wikipedia.org/wiki/Quantum_coin_flipping">https://en.wikipedia.org/wiki/Quantum_coin_flipping</a>
+      [Accessed on: 13/03/2018]</p>
+  <p> [3.5] Edwin Cartlidge (2013): <i>"The quantum coin toss"</i> [online].
+      Available from: <a href "https://physicsworld.com/a/the-quantum-coin-toss/">https://physicsworld.com/a/the-quantum-coin-toss/</a>
+      [Accessed on: 13/03/2018]</p>
+  <p> [3.6] Jennifer Ouellette (2013): <i>"Why Every Coin Flip May Be a Schrödinger's Cat" </i>[online].
+      Available from: <a href "http://nautil.us/blog/why-every-coin-flip-may-be-a-schrdingers-cat">http://nautil.us/blog/why-every-coin-flip-may-be-a-schrdingers-cat</a>
+      [Accessed on: 13/03/2018]</p>
+  <p> [3.7] Stuart Mason Dambrot (2014):<i> "Heads or tails: Experimental quantum coin flipping cryptography performs better than classical protocols"</i> [online].
+      Available from: <a href " https://phys.org/news/2014-05-tails-experimental-quantum-coin-flipping.html"> https://phys.org/news/2014-05-tails-experimental-quantum-coin-flipping.html</a>
+      [Accessed on: 13/03/2018]</p>
+  <p> [3.8] Anna Pappa et al.(2014): <i>"Experimental Plug and Play Quantum Coin Flipping" </i>[online].
+      Available from: <a href "https://www.nature.com/articles/ncomms4717">https://www.nature.com/articles/ncomms4717</a>
+      [Accessed on: 13/03/2018]</p>
 </div>
 
 <br>
