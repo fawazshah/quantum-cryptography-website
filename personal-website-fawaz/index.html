@@ -1,51 +1,90 @@
 <html>
-        <head>
-                <title>Countdown</title>
-                <style>
-                        @-webkit-keyframes fadeIn {             /* "-webkit-" for Chrome/Safari/Opera */
-                                from {opacity: 0;}
-                                to {opacity: 1;}
-                        }
+	<head>
+		<title>Personal Webpage</title>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			@-webkit-keyframes fadeIn { 		/* "-webkit-" for Chrome/Safari/Opera */
+				from {opacity: 0;}
+				to {opacity: 1;}
+			}
 
-                        @keyframes fadeIn {
-                                from {opacity: 0;}
-                                to {opacity: 1;}
-                        }
+			@keyframes fadeIn {
+				from {opacity: 0;}
+				to {opacity: 1;}
+			}
 
-                        #background {
-                                height: 100%;
-                                width: 100%;
-                                background: linear-gradient(#3399ff, #66ccff);
-                                -webkit-animation: fadeIn 1s;
-                                animation: fadeIn 1s;
-                                -webkit-animation-fill-mode: forwards;
-                                animation-fill-mode: forwards;
-                        }
+			#background {
+				height: 100%;
+				width: 100%;
+				background: linear-gradient(#3399ff, #66ccff);
+				-webkit-animation: fadeIn 1s;
+    				animation: fadeIn 1s;
+				-webkit-animation-fill-mode: forwards;
+				animation-fill-mode: forwards;
+			}
 
-                        #text {
-                                opacity: 0;
-                                padding-top: 7%;
-                                text-align: center;
-                                line-height: 150%;
-                                color: #ffff99;
-                                font-size: 500%;
+			#text {
                                 font-family: Verdana;
-                                -webkit-animation: fadeIn 1s;
-                                animation: fadeIn 1s;
-                                -webkit-animation-fill-mode: forwards;
-                                animation-fill-mode: forwards;
-                                -webkit-animation-delay: 0.5s;
-                                animation-delay: 0.5s;
+                                text-align: center;
+                                color: #ffff99;
+				opacity: 0;
+				padding-top: 7%;
+				line-height: 300%;
+				font-family: Verdana;
+				-webkit-animation: fadeIn 1s;
+    				animation: fadeIn 1s;
+				-webkit-animation-fill-mode: forwards;
+				animation-fill-mode: forwards;
+				-webkit-animation-delay: 0.5s;
+				animation-delay: 0.5s;
                         }
-                </style>
-        </head>
+                        
+                        .fa {
+                                padding: 20px;
+                                font-size: 30px;
+                                width: 30px;
+                                text-align: center;
+                                text-decoration: none;
+                                border-radius: 50%;
+                        }
 
-        <body onload="getCountdown()">
-                <div id="background">
-                        <div id="text">
-                          <h1>Fawaz Shah</h1>
-                          <p>Imperial College JMC student</p>
-                        </div>
-                </div>
-        </body>
+                        .fa:hover {
+                                background: #ffffff;
+                        }
+                        
+                        .fa-facebook {
+                            background: #3B5998;
+                            color: white;
+                        }
+
+                        .fa-linkedin {
+                            background: #0077B5;
+                            color: white;
+                        }
+
+                        h1 {
+                                font-size: 1000%;
+                        }
+
+                        h2 {
+				font-size: 300%;
+			}
+
+                        p {
+				font-size: 40%;
+                        }
+		</style>
+	</head>
+
+	<body onload="getCountdown()">
+		<div id="background">
+			<div id="text">
+			  <h1>Fawaz Shah</h1>
+			  <h2>Imperial College JMC student</p>
+                          <br>
+                          <a href="https://www.facebook.com/fawazshah010" target="_blank" class="fa fa-facebook"></a>
+                          <a href="https://www.linkedin.com/in/fawaz-s-a63b98119/" target="_blank "class="fa fa-linkedin"></a> 
+			</div>
+		</div>
+	</body>
 </html>
