@@ -30,17 +30,13 @@ figure {
   margin: 0em 1em 0em 1em;
 }
 
-figcaption {
-  text-align: center;
-}
-
-ul{
+ul {
    width: 100%;
    display: table;
    text-align: center;
 }
 
-ul li{
+ul li {
      display: inline-block;
      float: none;
 }
